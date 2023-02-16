@@ -1,3 +1,5 @@
+#!/bin/pypy
+
 """
 STARTER CODE FOR CREATIVE CODING 6
 """
@@ -28,27 +30,39 @@ def cons(a, b):
 
 #Question 1
 def fact(x):
-    pass
+    if x <= 1:
+        return 1
+    return x * fact(x - 1)
 
 #Question 2
 def count(xs):
-    pass
+    if tail(xs) == []:
+        return 1
+    return 1 + count(tail(xs))
 
 #Question 3
 def sumList(xs):
-    pass
+    if tail(xs) == []:
+        return head(xs)
+    return head(xs) + sumList(tail(xs))    
 
 #Question 4
 def fib(n):
-    pass
+    if n <= 1:
+        return n
+    return fib(n - 1) + fib(n - 2)
 
 #Question 5
 def take(xs, n):
-    pass
+    if tail(xs) == [] or n == 1:
+        return head(xs)
+    return cons(head(xs), take(tail(xs), n - 1))
 
 #Question 6
 def drop(xs, n):
-    pass
+    if tail(xs) == [] or n == 1:
+        return xs
+    return drop(tail(xs), n - 1)
 
 #----------------------------------------------------
 
